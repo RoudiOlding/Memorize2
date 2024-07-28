@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
 // The "View" thing indicates the contentview to "Behaves like a" view.
     //var i: Int, this are normal properties
     //var s: String
+    var viewModel: EmojiMemoryGame
+    
     let emojis = ["🤨", "💤", "🗿", "🕊️", "🦊", "🎸", "🤨", "💤", "🗿", "🕊️", "🦊", "🎸"]
     @State var cardCount: Int = 4
     
@@ -56,5 +58,5 @@ struct CardView: View {
 
 
 #Preview {
-    ContentView()
+    EmojiMemoryGameView()
 }
