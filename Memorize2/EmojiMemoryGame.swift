@@ -8,10 +8,10 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    private static let emojis = ["🤨", "💤", "🗿", "🕊️", "🦊", "🎸", "🧿", "⚗️", "⚰️", "🔫", "🪓", "💎"]
+    private static let emojis = ["🤨", "💤", "🗿", "🕊️", "🦊", "🎸", "⚗️", "⚰️", "🔫", "🪓"]
     //the private contrainst this model var to only be modified by this "model view"
     private static func createMemoryGame() -> MemoryGame<String>{
-            return MemoryGame(numberOfPairOfCards: 13){ pairIndex in
+            return MemoryGame(numberOfPairOfCards: 10){ pairIndex in
                 if emojis.indices.contains(pairIndex){
                     return emojis[pairIndex]
                 } else {
