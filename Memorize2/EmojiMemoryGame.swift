@@ -8,10 +8,12 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
+    typealias Card = MemoryGame<String>.Card
     private static let emojis = ["🤨", "💤", "🗿", "🕊️", "🦊", "🎸", "⚗️", "⚰️", "🔫", "🪓"]
     //the private contrainst this model var to only be modified by this "model view"
+    
     private static func createMemoryGame() -> MemoryGame<String>{
-            return MemoryGame(numberOfPairOfCards: 10){ pairIndex in
+            return MemoryGame(numberOfPairOfCards: 2){ pairIndex in
                 if emojis.indices.contains(pairIndex){
                     return emojis[pairIndex]
                 } else {
@@ -23,8 +25,11 @@ class EmojiMemoryGame: ObservableObject {
     //Para saber que es reactiva, que cambiara
     @Published private var model = createMemoryGame()
     
-    var cards: Array<MemoryGame<String>.Card>{
-        return model.cards
+    var cards: Array<Card>{
+        model.cards
+    }
+    var color: Color{
+        .orange
     }
     
     // MARK: - Intents
@@ -34,7 +39,7 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     // No hay external name
-    func choose(_ card: MemoryGame<String>.Card){
+    func choose(_ card: Card){
         model.choose(card)
     }
 }
