@@ -15,7 +15,7 @@ class EmojiMemoryGame: ObservableObject {
                 if emojis.indices.contains(pairIndex){
                     return emojis[pairIndex]
                 } else {
-                    return "❌"
+                    return "❌" 
                 }
             }
     }
