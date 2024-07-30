@@ -13,7 +13,7 @@ class EmojiMemoryGame: ObservableObject {
     //the private contrainst this model var to only be modified by this "model view"
     
     private static func createMemoryGame() -> MemoryGame<String>{
-            return MemoryGame(numberOfPairOfCards: 2){ pairIndex in
+            return MemoryGame(numberOfPairOfCards: 8){ pairIndex in
                 if emojis.indices.contains(pairIndex){
                     return emojis[pairIndex]
                 } else {
